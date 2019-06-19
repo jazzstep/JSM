@@ -74,7 +74,7 @@ def getGhostData():
 def getLibraryData():
     df = pd.read_sql("""
         select  * 
-        from    library_table
+        from    library_data
         """, db.engine)
     library_file = df.to_csv()
     return library_file
@@ -83,7 +83,7 @@ def getLibraryData():
 def getMexicanData():
     df = pd.read_sql("""
         select  * 
-        from    mexican_table
+        from    mexican_data
         """, db.engine)
     mexican_file = df.to_csv()
     return mexican_file
@@ -92,7 +92,7 @@ def getMexicanData():
 def getPizzaData():
     df = pd.read_sql("""
         select  * 
-        from    pizza_table
+        from    pizza_data
         """, db.engine)
     pizza_file = df.to_csv()
     return pizza_file
@@ -101,7 +101,7 @@ def getPizzaData():
 def getRedlightData():
     df = pd.read_sql("""
         select  * 
-        from    redlight_table
+        from    redlight_data
         """, db.engine)
     redlight_file = df.to_csv()
     return redlight_file

@@ -1,3 +1,4 @@
+DROP DATABASE if exists chicago_neighborhoods_db;
 CREATE DATABASE chicago_neighborhoods_db;
 USE chicago_neighborhoods_db;
 

@@ -1,5 +1,4 @@
 import os
-
 import pandas as pd
 import numpy as np
 
@@ -19,7 +18,7 @@ app = Flask(__name__)
 # Database Setup
 #################################################
 
-app.config["Chicago_neighborhoods_db"] = DATABASE_URL
+app.config["chicago_neighborhoods_db"] = DATABASE_URL
 db = SQLAlchemy(app)
 
 # # reflect an existing database into a new model
@@ -27,7 +26,7 @@ db = SQLAlchemy(app)
 # # reflect the tables
 # Base.prepare(db.engine, reflect=True)
 
-# # Save references to each table
+# # Save references to each of the tables
 # Samples_Metadata = Base.classes.sample_metadata
 # Samples = Base.classes.samples
 
@@ -47,7 +46,7 @@ def index():
 def getAsianData():
     df = pd.read_sql("""
         select  * 
-        from    asian_table
+        from    asian_data
         """, db.engine)
     asian_file = df.to_csv()
     return asian_file
@@ -56,7 +55,7 @@ def getAsianData():
 def getCoffeeData():
     df = pd.read_sql("""
         select  * 
-        from    coffee_table
+        from    coffee_data
         """, db.engine)
     coffee_file = df.to_csv()
     return coffee_file
@@ -65,7 +64,7 @@ def getCoffeeData():
 def getGhostData():
     df = pd.read_sql("""
         select  * 
-        from    ghost_table
+        from    haunted_data
         """, db.engine)
     ghost_file = df.to_csv()
     return ghost_file

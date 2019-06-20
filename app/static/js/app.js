@@ -258,7 +258,7 @@ function createFeatures (neighborhoodData) {
 };
 
 var hauntedMarkers = [];
-d3.csv("../Datasets/haunted.csv", function(error, hauntedData) {
+d3.csv("/api/ghost", function(error, hauntedData) {
   
   if (error) return console.warn(error);
 
@@ -275,7 +275,7 @@ d3.csv("../Datasets/haunted.csv", function(error, hauntedData) {
 console.log(hauntedMarkers);
 
 var redMarkers = [];
-d3.csv("../Datasets/red-light-camera-locations.csv", function (error, red) {
+d3.csv("/api/redlight", function (error, red) {
 
   if (error) return console.warn(error);
 
@@ -294,16 +294,16 @@ var CPLMarkers = [];
 // d3.csv('CPLdata1.csv', function(data) {
 // console.log(data)
 // })
-d3.csv("../Datasets/CPLdata1.csv", function(data) {
+d3.csv("/api/library", function(data) {
   console.log(data);
 
   // Cast each hours value in tvData as a number using the unary + operator
-  data.forEach(function(d) {
+  data.forEach(function(e) {
 
-    lat = d.Latitude;
-    lng = d.Longitude;
+    lat = e.Latitude;
+    lng = e.Longitude;
     CPLMarkers.push(
-      L.marker([lat, lng], {icon: CPLIcon}).bindPopup("<h3 align = 'center'>" + d.Name + "</h3><h4 align = 'center'>" + d.Hours+ "<br></br>"+ d.Phone + "<br></br>"+ d.Address + "<br></br><a href="+ d.Website+" target = '_blank'>" +`Website`+"</a></h4>"));
+      L.marker([lat, lng], {icon: CPLIcon}).bindPopup("<h3 align = 'center'>" + e.Name + "</h3><h4 align = 'center'>" + e.Hours+ "<br></br>"+ e.Phone + "<br></br>"+ e.Address + "<br></br><a href="+ e.Website+" target = '_blank'>" +`Website`+"</a></h4>"));
   });
 });
 
@@ -322,7 +322,7 @@ var pizzaClusterMarkers = L.markerClusterGroup({
   }
 });
 
-d3.csv("../Datasets/pizzaUpdate.csv", function(error, pizzaData) {
+d3.csv("/api/pizza", function(error, pizzaData) {
   
     if (error) return console.warn(error);
 
@@ -352,7 +352,7 @@ var mexicanClusterMarkers = L.markerClusterGroup({
     });
   }
 });
- d3.csv("../Datasets/mexicanUpdate.csv", function(error, mexicanData) {
+ d3.csv("/api/mexican", function(error, mexicanData) {
     
     if (error) return console.warn(error);
   

@@ -1,6 +1,6 @@
 database = {
     'user': 'root', 
-    'password': 'ravenclaw62442',
+    'password': 'Om6489ega!',
     'port': '3306',
     'host': 'localhost',
     'database': 'chicago_neighborhood_db',

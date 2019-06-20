@@ -35,7 +35,7 @@ def buildApp():
     # Check for enviroment variable DATABASE_URL
     # If it doesn't exist use DATABASE_URL from config.py
 
-    flask_app.config['chicago_neighborhoods_db'] = os.environ.get('DATABASE_URL', '') or db_config.DATABASE_URL
+    flask_app.config['chicago_neighborhoods_db'] = os.environ.get('DATABASE_URL', '') or config.DATABASE_URL
     flask_app.config['chicago_neighborhoods_db'] = False
 
     # Attach db to Flask app so Flask handels db session managment and other good things
@@ -112,3 +112,5 @@ def buildApp():
     return flask_app
 if __name__ == "__main__":
     app.run()
+
+debug=True

@@ -29,7 +29,7 @@ with flask_app.app_context():
     # print("\nClean and transform ....\n")
     # # CLEAN
     # # TRANSFORM
-    # print(df.head())
+    print(df.head())
 
     print(f"Saving results to {'asian_data'}")
     # Save results from import as 

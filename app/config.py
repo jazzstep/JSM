@@ -1,6 +1,6 @@
 database = {
-    'user': 'admin', 
-    'password': 'Om6489ega!',
+    'user': 'root', 
+    'password': 'ravenclaw62442',
     'port': '3306',
     'host': 'localhost',
     'database': 'chicago_neighborhood_db',
@@ -18,3 +18,5 @@ DATABASE_URL = f"{db_prefix}://{database['user']}:{database['password']}@{databa
 
 # Docs on building database connection URLS
 # https://docs.sqlalchemy.org/en/13/core/engines.html
+
+#Om6489ega!

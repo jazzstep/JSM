@@ -28,15 +28,16 @@ def buildApp():
     flask_app = Flask(__name__)
     
 # app.config["chicago_neighborhoods_db"] = DATABASE_URL
-    db = SQLAlchemy(flask_app)
+    
     # *********************************************
     # ************** Database Setup ***************
     # *********************************************
     # Check for enviroment variable DATABASE_URL
     # If it doesn't exist use DATABASE_URL from config.py
 
-    flask_app.config['chicago_neighborhoods_db'] = os.environ.get('DATABASE_URL', '') or config.DATABASE_URL
-    flask_app.config['chicago_neighborhoods_db'] = False
+    flask_app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') or config.DATABASE_URL
+    flask_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    
 
     # Attach db to Flask app so Flask handels db session managment and other good things
     db.init_app(flask_app)
@@ -55,13 +56,13 @@ def buildApp():
     @flask_app.route("/api/asian")
     def getAsianData():
         df = pd.read_sql("""
-        select  * from    asian_data""", db.engine)
+        select  * from    asian_table""", db.engine)
         asian_file = df.to_csv()
         return asian_file
 #coffe data
     @flask_app.route("/api/coffee")
     def getCoffeeData():
-        df = pd.read_sql("""select  * from    coffee_data""", db.engine)
+        df = pd.read_sql("""select  * from    coffee_table""", db.engine)
         coffee_file = df.to_csv()
         return coffee_file
 #ghost data
@@ -109,8 +110,18 @@ def buildApp():
         """, db.engine)
         redlight_file = df.to_csv()
         return redlight_file
-    return flask_app
-if __name__ == "__main__":
-    app.run()
 
-debug=True
+#Library info
+    @flask_app.route("/api/library/count/${neighborhood_name}")
+    def getLibraryCount():
+        library_count = pd.read_sql("""
+        select  COUNT(*)
+        FROM    library_data
+        WHERE   Neighborhood = '${neighborhood_name}'
+        """, db.engine)
+        return library_count
+        
+    return flask_app
+
+# if __name__ == "__main__":
+#     app.run()

@@ -40,3 +40,26 @@ html {
   top: 25%;
   transform: translate(-50%, -50%);
 }
+
+#sushiText {
+  z-index: 100;
+  position: absolute;
+  color: black;
+  font-size: 13px;
+  font-weight: bold;
+  left: 40%;
+  top: 15%;
+  transform: translate(-50%, -50%);
+}
+
+
+#coffeeText {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  left: 40%;
+  top: 15%;
+  transform: translate(-50%, -50%);
+}

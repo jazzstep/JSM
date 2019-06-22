@@ -69,7 +69,7 @@ def loadCsvData():
         # Import a csv file into a pandas dataframe, clean, then save the results to a database table
     path_for_this_file = os.path.dirname(__file__)
     file_name = "coffeeUpdate.csv"
-    absolute_csv_path = os.path.join(path_for_this_file, ".." , "Datasets", file_name)
+    absolute_csv_path = os.path.join(path_for_this_file, ".." ,"Datasets", file_name)
     db_table_name = "coffee_table"
 
     print(f"Importing csv {'coffeeUpdate'}")
@@ -88,7 +88,7 @@ def loadCsvData():
         # Import a csv file into a pandas dataframe, clean, then save the results to a database table
     path_for_this_file = os.path.dirname(__file__)
     file_name = "CPLdata1.csv"
-    absolute_csv_path = os.path.join(path_for_this_file, "Datasets", file_name)
+    absolute_csv_path = os.path.join(path_for_this_file, ".." ,"Datasets", file_name)
     db_table_name = "library_data"
 
     print(f"Importing csv {'CPLdata1'}")
@@ -107,7 +107,7 @@ def loadCsvData():
         # Import a csv file into a pandas dataframe, clean, then save the results to a database table
     path_for_this_file = os.path.dirname(__file__)
     file_name = "hauntedUpdate.csv"
-    absolute_csv_path = os.path.join(path_for_this_file, "Datasets", file_name)
+    absolute_csv_path = os.path.join(path_for_this_file, ".." ,"Datasets", file_name)
     db_table_name = "haunted_data"
 
     print(f"Importing csv {'haunted'}")
@@ -126,7 +126,7 @@ def loadCsvData():
         # Import a csv file into a pandas dataframe, clean, then save the results to a database table
     path_for_this_file = os.path.dirname(__file__)
     file_name = "mexicanUpdate.csv"
-    absolute_csv_path = os.path.join(path_for_this_file, "Datasets", file_name)
+    absolute_csv_path = os.path.join(path_for_this_file, ".." ,"Datasets", file_name)
     db_table_name = "mexican_data"
 
     print(f"Importing csv {'mexican'}")
@@ -145,7 +145,7 @@ def loadCsvData():
         # Import a csv file into a pandas dataframe, clean, then save the results to a database table
     path_for_this_file = os.path.dirname(__file__)
     file_name = "pizzaUpdate.csv"
-    absolute_csv_path = os.path.join(path_for_this_file, "Datasets", file_name)
+    absolute_csv_path = os.path.join(path_for_this_file, ".." ,"Datasets", file_name)
     db_table_name = "pizza_data"
 
     print(f"Importing csv {'pizza'}")
@@ -164,7 +164,7 @@ def loadCsvData():
         # Import a csv file into a pandas dataframe, clean, then save the results to a database table
     path_for_this_file = os.path.dirname(__file__)
     file_name = "red-light-camera-locations.csv"
-    absolute_csv_path = os.path.join(path_for_this_file, "Datasets", file_name)
+    absolute_csv_path = os.path.join(path_for_this_file, ".." ,"Datasets", file_name)
     db_table_name = "redlight_data"
 
     print(f"Importing csv {'redlight'}")

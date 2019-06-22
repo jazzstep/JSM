@@ -1,2 +1,2 @@
-from app.app_flask import buildApp
-flask_app = buildApp()
+# from app.app_flask import buildApp
+# flask_app = buildApp()

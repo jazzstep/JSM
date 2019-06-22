@@ -262,8 +262,8 @@ function createFeatures (neighborhoodData) {
         // }
       });
       // Giving each feature a pop-up with information pertinent to it
-      libraryCount = "/api/library/count/" + feature.properties.community
-      layer.bindPopup("<h1>" + feature.properties.community + "</h1> <hr> <h2>" + libraryCount + "</h2>");
+      // libraryCount = "/api/library/count/" + feature.properties.community
+      layer.bindPopup("<h1>" + feature.properties.community + "</h1>");
     }
   });
   // Call createMap function defined below

@@ -49,7 +49,7 @@ def loadCsvData():
     # Import a csv file into a pandas dataframe, clean, then save the results to a database table
     path_for_this_file = os.path.dirname(__file__)
     file_name = "asianUpdate.csv"
-    absolute_csv_path = os.path.join(path_for_this_file, "Datasets", file_name)
+    absolute_csv_path = os.path.join(path_for_this_file, ".." ,"Datasets", file_name)
     db_table_name = "asian_table"
 
     print(f"Importing csv {'asianUpdate'}")
@@ -69,7 +69,7 @@ def loadCsvData():
         # Import a csv file into a pandas dataframe, clean, then save the results to a database table
     path_for_this_file = os.path.dirname(__file__)
     file_name = "coffeeUpdate.csv"
-    absolute_csv_path = os.path.join(path_for_this_file, "Datasets", file_name)
+    absolute_csv_path = os.path.join(path_for_this_file, ".." , "Datasets", file_name)
     db_table_name = "coffee_table"
 
     print(f"Importing csv {'coffeeUpdate'}")

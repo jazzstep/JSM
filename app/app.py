@@ -53,13 +53,13 @@ def renderHome():
 @app.route("/api/asian")
 def getAsianData():
     df = pd.read_sql("""
-    select  * from    asian_table""", db.engine)
+    select  * from    asian_data""", db.engine)
     asian_file = df.to_csv()
     return asian_file
 #coffe data
 @app.route("/api/coffee")
 def getCoffeeData():
-    df = pd.read_sql("""select  * from    coffee_table""", db.engine)
+    df = pd.read_sql("""select  * from    coffee_data""", db.engine)
     coffee_file = df.to_csv()
     return coffee_file
 #ghost data
